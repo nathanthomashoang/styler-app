@@ -6,6 +6,19 @@ import ItemView from '@/components/server/ItemView';
 import { Item } from '@/types/item';
 import CircularProgress from '@mui/material/CircularProgress';
 
+export async function generateStaticParams() {
+    try {
+      const response = await axios.get('https://my-json-server.typicode.com/nathanthomashoang/db-json-styler/clothing');
+      const items: Item[] = response.data;
+  
+      return items.map(item => ({
+        id: item.id,
+      }));
+    } catch (error) {
+      console.error('Error fetching items:', error);
+    }
+  }
+
 const page = ({ params }: { params: { id: number } }) => {
     const [item, setItem] = React.useState<Item>();
     const [isLoading, setIsLoading] = React.useState(true);
