@@ -5,7 +5,6 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import CheckroomIcon from '@mui/icons-material/Checkroom';
 import Container from '@mui/material/Container';
 import IconButton from '@mui/material/IconButton';
 import MenuItem from '@mui/material/MenuItem';
@@ -35,9 +34,9 @@ const NavBar = () => {
             <AppBar position="static" style={{ backgroundColor: theme.palette.primary.main }}>
                 <Container maxWidth="xl">
                     <Toolbar disableGutters>
-                        <Box className="hidden md:flex mr-5" component="a" href="/">
-                            <Image priority src="/logo.png" alt="Logo" width={140} height={200} />
-                        </Box>
+                        <Link href="/" className="hidden md:flex mr-5">
+                            <Image priority src="/styler-app/logo.png" alt="Logo" width={140} height={200} />
+                        </Link>
 
                         <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                             <IconButton
@@ -79,9 +78,9 @@ const NavBar = () => {
                                 ))}
                             </Menu>
                         </Box>
-                        <Box className="flex md:hidden mr-5 grow" component="a" href="/">
-                            <Image src="/styler-app/logo.png" alt="Logo" width={140} height={200} />
-                        </Box>
+                        <Link href="/" className="flex md:hidden mr-5 grow">
+                            <Image priority src="/styler-app/logo.png" alt="Logo" width={140} height={200} />
+                        </Link>
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                             {pages.map((page) => (
                                 <Button
@@ -92,7 +91,6 @@ const NavBar = () => {
                                     <Link href={`/${page}`}>
                                         {page}
                                     </Link>
-                                    {/* <a href={`/${page}`}>{page}</a> */}
                                 </Button>
                             ))}
                         </Box>

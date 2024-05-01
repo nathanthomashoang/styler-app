@@ -1,8 +1,12 @@
+// "use client";
+
 import axios from 'axios';
 import * as React from 'react';
 import ItemView from '@/components/server/ItemView';
 import { Item } from '@/types/item';
 // import CircularProgress from '@mui/material/CircularProgress';
+
+// NOTE: Some aspects of React implementation of this specific view commented out in order to properly deploy to GH pages.
 
 type Params = {
     id: string;
