@@ -9,7 +9,7 @@ const Footer = () => {
                 Nate H
                 </Typography>
                 <Typography className="pr-5" gutterBottom component="p">
-                All images courtesy of Unsplash under the free-to-use license
+                Work-in-progress unless otherwise stated.
                 </Typography>
             </div>
         </footer>

@@ -68,13 +68,13 @@ const NavBar = () => {
                                 }}
                             >
                                 {pages.map((page) => (
-                                    <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                        <Typography textAlign="center">
-                                            <Link href={`/${page}`}>
+                                    <Link href={`/${page}`}>
+                                        <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                            <Typography textAlign="center">
                                                 {page.toUpperCase()}
-                                            </Link>
-                                        </Typography>
-                                    </MenuItem>
+                                            </Typography>
+                                        </MenuItem>
+                                    </Link>
                                 ))}
                             </Menu>
                         </Box>
@@ -83,15 +83,15 @@ const NavBar = () => {
                         </Link>
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                             {pages.map((page) => (
-                                <Button
-                                    key={page}
-                                    onClick={handleCloseNavMenu}
-                                    sx={{ my: 2, color: 'white', display: 'block' }}
-                                >
-                                    <Link href={`/${page}`}>
+                                <Link href={`/${page}`}>
+                                    <Button
+                                        key={page}
+                                        onClick={handleCloseNavMenu}
+                                        sx={{ my: 2, color: 'white', display: 'block' }}
+                                    >
                                         {page}
-                                    </Link>
-                                </Button>
+                                    </Button>
+                                </Link>
                             ))}
                         </Box>
                     </Toolbar>
