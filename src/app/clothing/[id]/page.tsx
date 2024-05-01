@@ -12,7 +12,7 @@ export async function generateStaticParams() {
     }));
 }
 
-export async function getItemById(id: number) {
+async function getItemById(id: number) {
     try {
         const response = await axios.get(`https://my-json-server.typicode.com/nathanthomashoang/db-json-styler/clothing/${id}`);
         return response.data;
