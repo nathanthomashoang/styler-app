@@ -4,11 +4,15 @@ import ItemView from '@/components/server/ItemView';
 import { Item } from '@/types/item';
 // import CircularProgress from '@mui/material/CircularProgress';
 
-export async function generateStaticParams() {
+type Params = {
+    id: string;
+}
+
+export async function generateStaticParams(): Promise<Params[]> {
     const items: Item[] = await fetch('https://my-json-server.typicode.com/nathanthomashoang/db-json-styler/clothing').then((res) => res.json());
 
     return items.map((item) => ({
-        item: item.id,
+        id: item.id.toString(),
     }));
 }
 
