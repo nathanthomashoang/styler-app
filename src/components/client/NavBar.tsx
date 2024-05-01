@@ -14,6 +14,7 @@ import Menu from '@mui/material/Menu';
 import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const pages = ['catalog'];
 
@@ -70,14 +71,16 @@ const NavBar = () => {
                                 {pages.map((page) => (
                                     <MenuItem key={page} onClick={handleCloseNavMenu}>
                                         <Typography textAlign="center">
-                                            <a href={`/${page}`}>{page.toUpperCase()}</a>
+                                            <Link href={`/${page}`}>
+                                                {page.toUpperCase()}
+                                            </Link>
                                         </Typography>
                                     </MenuItem>
                                 ))}
                             </Menu>
                         </Box>
                         <Box className="flex md:hidden mr-5 grow" component="a" href="/">
-                            <Image src="/logo.png" alt="Logo" width={140} height={200} />
+                            <Image src="/styler-app/logo.png" alt="Logo" width={140} height={200} />
                         </Box>
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                             {pages.map((page) => (
@@ -86,7 +89,10 @@ const NavBar = () => {
                                     onClick={handleCloseNavMenu}
                                     sx={{ my: 2, color: 'white', display: 'block' }}
                                 >
-                                    <a href={`/${page}`}>{page}</a>
+                                    <Link href={`/${page}`}>
+                                        {page}
+                                    </Link>
+                                    {/* <a href={`/${page}`}>{page}</a> */}
                                 </Button>
                             ))}
                         </Box>
