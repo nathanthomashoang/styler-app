@@ -1,2 +1,2 @@
 # styler-app
-A react app that helps you decide what to wear
+A webapp that helps you decide what to wear. Built using React, Next.js, Material-UI, and Tailwind CSS.
