@@ -7,6 +7,13 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
 import { useTheme } from '@mui/material/styles';
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 interface IOutfitViewProps {
     items: Item[];
@@ -61,7 +68,7 @@ const OutfitView = ({
                 {items.map((item) =>
                     <div key={item.id} className="flex flex-col justify-between">
                         <Divider variant="middle">
-                            <Typography className="flex justify-center" gutterBottom variant="h6" component="div">
+                            <Typography className="flex justify-center" gutterBottom variant="h6" component="div" fontFamily={montserrat.style.fontFamily}>
                                 {item.category}
                             </Typography>
                         </Divider>

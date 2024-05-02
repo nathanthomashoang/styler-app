@@ -68,8 +68,8 @@ const NavBar = () => {
                                 }}
                             >
                                 {pages.map((page) => (
-                                    <Link href={`/${page}`}>
-                                        <MenuItem key={page} onClick={handleCloseNavMenu}>
+                                    <Link key={page} href={`/${page}`}>
+                                        <MenuItem onClick={handleCloseNavMenu}>
                                             <Typography textAlign="center">
                                                 {page.toUpperCase()}
                                             </Typography>
@@ -83,9 +83,8 @@ const NavBar = () => {
                         </Link>
                         <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
                             {pages.map((page) => (
-                                <Link href={`/${page}`}>
+                                <Link key={page} href={`/${page}`}>
                                     <Button
-                                        key={page}
                                         onClick={handleCloseNavMenu}
                                         sx={{ my: 2, color: 'white', display: 'block' }}
                                     >

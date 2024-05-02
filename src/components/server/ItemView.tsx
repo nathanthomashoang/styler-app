@@ -4,6 +4,13 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import ItemDetailTable from '@/components/server/ItemDetailTable';
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+    weight: '400',
+    subsets: ['latin'],
+    display: 'swap',
+})
 
 interface IItemViewProps {
     item: Item;
@@ -25,16 +32,16 @@ const ItemView = ({
                     </Card>
                 </div>
                 <div className="ml-2 md:ml-0">
-                    <Typography gutterBottom variant="h3" component="h1">
+                    <Typography gutterBottom variant="h3" component="h1" fontFamily={montserrat.style.fontFamily}>
                         {item.title}
                     </Typography>
                     <div className='mb-8'>
                         <Typography gutterBottom variant="h6" component="h3" className='font-semibold'>
                             Description
                         </Typography>
-                        <div>
+                        <Typography gutterBottom>
                             {item.description}
-                        </div>
+                        </Typography>
                     </div>
                     <div>
                         <Typography gutterBottom variant="h6" component="h3" className="font-semibold">

@@ -3,13 +3,13 @@ import Typography from '@mui/material/Typography';
 
 const Footer = () => {
     return (
-        <footer className="bg-tw-accent">
-            <div className='container py-4 mt-10 ml-5 md:mx-auto'>
+        <footer className="bg-tw-accent shadow-2xl shadow-black">
+            <div className='py-4 mt-10 mx-5 md:mx-16'>
                 <Typography gutterBottom component="p">
                 Nate H
                 </Typography>
-                <Typography className="pr-5" gutterBottom component="p">
-                Work-in-progress unless otherwise stated.
+                <Typography className="" gutterBottom component="p">
+                Work-in-progress unless otherwise noted.
                 </Typography>
             </div>
         </footer>

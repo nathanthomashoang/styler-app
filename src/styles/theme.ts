@@ -12,7 +12,10 @@ export const theme = createTheme({
       },
     },
     typography: {
-      fontFamily: 'Arial',
+      fontFamily: [
+        'Verdana',
+        'sans-serif'
+      ].join(','),
       fontSize: 14,
     },
   });

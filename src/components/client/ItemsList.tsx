@@ -4,6 +4,13 @@ import { Item, ITEM_CATEGORY_CONSTANTS } from '@/types/item';
 import ItemCard from '@/components/client/ItemCard';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  weight: '400',
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 interface IItemsListProps {
     items: Item[];
@@ -29,7 +36,7 @@ const ItemsList = ({
     return (
         <div>
             <Divider variant="middle">
-                <Typography gutterBottom variant="h4" component="h2">
+                <Typography gutterBottom variant="h4" component="h2" fontFamily={montserrat.style.fontFamily}>
                     Headwear
                 </Typography>
             </Divider>
@@ -39,7 +46,7 @@ const ItemsList = ({
                 })}
             </div>
             <Divider variant="middle">
-                <Typography gutterBottom variant="h4" component="h2">
+                <Typography gutterBottom variant="h4" component="h2" fontFamily={montserrat.style.fontFamily}>
                     Tops
                 </Typography>
             </Divider>
@@ -49,7 +56,7 @@ const ItemsList = ({
                 })}
             </div>
             <Divider variant="middle">
-                <Typography gutterBottom variant="h4" component="h2">
+                <Typography gutterBottom variant="h4" component="h2" fontFamily={montserrat.style.fontFamily}>
                     Bottoms
                 </Typography>
             </Divider>
@@ -59,7 +66,7 @@ const ItemsList = ({
                 })}
             </div>
             <Divider variant="middle">
-                <Typography gutterBottom variant="h4" component="h2">
+                <Typography gutterBottom variant="h4" component="h2" fontFamily={montserrat.style.fontFamily}>
                     Footwear
                 </Typography>
             </Divider>
