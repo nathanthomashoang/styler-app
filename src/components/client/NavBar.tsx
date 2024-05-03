@@ -14,6 +14,13 @@ import Button from '@mui/material/Button';
 import { useTheme } from '@mui/material/styles';
 import Image from 'next/image';
 import Link from 'next/link';
+import { Playfair_Display } from "next/font/google";
+
+const playfairDisplay = Playfair_Display({
+    weight: '400',
+    subsets: ['latin'],
+    display: 'swap',
+});
 
 const pages = ['catalog'];
 
@@ -88,7 +95,9 @@ const NavBar = () => {
                                         onClick={handleCloseNavMenu}
                                         sx={{ my: 2, color: 'white', display: 'block' }}
                                     >
-                                        {page}
+                                        {<Typography fontFamily={playfairDisplay.style.fontFamily}>
+                                            {page}
+                                        </Typography>}
                                     </Button>
                                 </Link>
                             ))}

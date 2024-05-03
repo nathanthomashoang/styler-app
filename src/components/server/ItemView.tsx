@@ -4,13 +4,6 @@ import Card from '@mui/material/Card';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import ItemDetailTable from '@/components/server/ItemDetailTable';
-import { Montserrat } from "next/font/google";
-
-const montserrat = Montserrat({
-    weight: '400',
-    subsets: ['latin'],
-    display: 'swap',
-})
 
 interface IItemViewProps {
     item: Item;
@@ -32,7 +25,7 @@ const ItemView = ({
                     </Card>
                 </div>
                 <div className="ml-2 md:ml-0">
-                    <Typography gutterBottom variant="h3" component="h1" fontFamily={montserrat.style.fontFamily}>
+                    <Typography gutterBottom variant="h4" component="h1" >
                         {item.title}
                     </Typography>
                     <div className='mb-8'>

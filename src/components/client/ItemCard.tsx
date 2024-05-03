@@ -39,7 +39,7 @@ const ItemCard = ({
                     height: '100%',
                     width: '100%'
                 }}>
-                    <Typography gutterBottom variant="h6" component="div">
+                    <Typography gutterBottom component="div">
                         {item.title}
                     </Typography>
                 </CardContent>

@@ -6,13 +6,12 @@ import Checkbox from '@mui/material/Checkbox';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
-import { useTheme } from '@mui/material/styles';
-import { Montserrat } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 
-const montserrat = Montserrat({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
+const playfairDisplay = Playfair_Display({
+    weight: '400',
+    subsets: ['latin'],
+    display: 'swap',
 });
 
 interface IOutfitViewProps {
@@ -34,7 +33,6 @@ const OutfitView = ({
     onFormData,
     isDisabled
 }: IOutfitViewProps) => {
-    const theme = useTheme();
     const [categoryFormState, setCategoryFormState] = React.useState<ClothingCategories>({
         "headwear": true,
         "tops": true,
@@ -62,13 +60,18 @@ const OutfitView = ({
                     size="large"
                     variant="outlined"
                     onClick={handleSubmit}
-                    disabled={isDisabled}>Randomize Outfit</Button>
+                    disabled={isDisabled}
+                >
+                    <Typography variant="h6" fontFamily={playfairDisplay.style.fontFamily}>
+                        Randomize Outfit
+                    </Typography>
+                </Button>
             </div>
-            <form className='grid grid-cols-2 gap-0 md:grid-cols-4 md:gap-4'>
+            <form className='grid grid-cols-2 md:grid-cols-4 md:gap-4'>
                 {items.map((item) =>
-                    <div key={item.id} className="flex flex-col justify-between">
+                    <div key={item.id} className="flex flex-col justify-between mb-5 mx-2 md:mx-0">
                         <Divider variant="middle">
-                            <Typography className="flex justify-center" gutterBottom variant="h6" component="div" fontFamily={montserrat.style.fontFamily}>
+                            <Typography className="flex justify-center" gutterBottom variant="h6" component="div" fontFamily={playfairDisplay.style.fontFamily}>
                                 {item.category}
                             </Typography>
                         </Divider>
@@ -78,8 +81,8 @@ const OutfitView = ({
                             control={<Checkbox
                                 checked={categoryFormState[item.category]}
                                 name={item.category}
-                                onChange={handleCheckboxChange} 
-                                disabled={isDisabled}/>
+                                onChange={handleCheckboxChange}
+                                disabled={isDisabled} />
                             }
                             label='Randomize' />
                     </div>

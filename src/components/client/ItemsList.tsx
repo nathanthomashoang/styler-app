@@ -4,12 +4,12 @@ import { Item, ITEM_CATEGORY_CONSTANTS } from '@/types/item';
 import ItemCard from '@/components/client/ItemCard';
 import Typography from '@mui/material/Typography';
 import Divider from '@mui/material/Divider';
-import { Montserrat } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 
-const montserrat = Montserrat({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
+const playfairDisplay = Playfair_Display({
+    weight: '400',
+    subsets: ['latin'],
+    display: 'swap',
 });
 
 interface IItemsListProps {
@@ -36,41 +36,41 @@ const ItemsList = ({
     return (
         <div>
             <Divider variant="middle">
-                <Typography gutterBottom variant="h4" component="h2" fontFamily={montserrat.style.fontFamily}>
+                <Typography gutterBottom variant="h4" component="h2" fontFamily={playfairDisplay.style.fontFamily}>
                     Headwear
                 </Typography>
             </Divider>
-            <div className="grid grid-cols-2 gap-0 md:grid-cols-4 md:gap-4">
+            <div className="grid grid-cols-2 gap-0 md:grid-cols-4 md:gap-4 mb-5">
                 {headItems.map((item) => {
                     return <ItemCard item={item} key={item.id} />
                 })}
             </div>
             <Divider variant="middle">
-                <Typography gutterBottom variant="h4" component="h2" fontFamily={montserrat.style.fontFamily}>
+                <Typography gutterBottom variant="h4" component="h2" fontFamily={playfairDisplay.style.fontFamily}>
                     Tops
                 </Typography>
             </Divider>
-            <div className="grid grid-cols-2 gap-0 md:grid-cols-4 md:gap-4">
+            <div className="grid grid-cols-2 gap-0 md:grid-cols-4 md:gap-4 mb-5">
                 {topItems.map((item) => {
                     return <ItemCard item={item} key={item.id} />
                 })}
             </div>
             <Divider variant="middle">
-                <Typography gutterBottom variant="h4" component="h2" fontFamily={montserrat.style.fontFamily}>
+                <Typography gutterBottom variant="h4" component="h2" fontFamily={playfairDisplay.style.fontFamily}>
                     Bottoms
                 </Typography>
             </Divider>
-            <div className="grid grid-cols-2 gap-0 md:grid-cols-4 md:gap-4">
+            <div className="grid grid-cols-2 gap-0 md:grid-cols-4 md:gap-4 mb-5">
                 {bottomItems.map((item) => {
                     return <ItemCard item={item} key={item.id} />
                 })}
             </div>
             <Divider variant="middle">
-                <Typography gutterBottom variant="h4" component="h2" fontFamily={montserrat.style.fontFamily}>
+                <Typography gutterBottom variant="h4" component="h2" fontFamily={playfairDisplay.style.fontFamily}>
                     Footwear
                 </Typography>
             </Divider>
-            <div className="grid grid-cols-2 gap-0 md:grid-cols-4 md:gap-4">
+            <div className="grid grid-cols-2 gap-0 md:grid-cols-4 md:gap-4 mb-5">
                 {footItems.map((item) => {
                     return <ItemCard item={item} key={item.id} />
                 })}
